@@ -1,0 +1,195 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf290
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 % Chris McKnight\
+% Run of custom numerical integration of 1/(1+x) using odd and even rules\
+% Even: a +(i - 1 + sqrt(3)/3)*h\
+% Odd: a + (i - sqrt(3)/3)*h\
+a = 0;\
+b = 1;\
+N2   = numintegration(a, b, 2)\
+N4   = numintegration(a, b, 4)\
+N8   = numintegration(a, b, 8)\
+N16  = numintegration(a, b, 16)\
+N32  = numintegration(a, b, 32)\
+N64  = numintegration(a, b, 64)\
+N128 = numintegration(a, b, 128)\
+N256 = numintegration(a, b, 256)\
+\
+num = N32 - N16;\
+den = N64 - N32;\
+pN = log(num / den)/log(2)\
+\
+CN2   = CN(a, b, N2, N4, p)\
+CN4   = CN(a, b, N4, N8, p)\
+CN8   = CN(a, b, N8, N16, p)\
+CN16  = CN(a, b, N16, N32, p)\
+CN32  = CN(a, b, N32, N64, p)\
+CN64  = CN(a, b, N64, N128, p)\
+CN128 = CN(a, b, N128, N256, p)\
+\
+num = CN64 - CN32;\
+den = CN128 - CN64;\
+pCN = log(num / den)/log(2)\
+\
+error =\
+\
+   0.097744694169693\
+\
+\
+N2 =\
+\
+   0.595402486390252\
+\
+\
+error =\
+\
+   0.054449240571575\
+\
+\
+N4 =\
+\
+   0.638697939988371\
+\
+\
+error =\
+\
+   0.029030011281374\
+\
+\
+N8 =\
+\
+   0.664117169278571\
+\
+\
+error =\
+\
+   0.015039659311597\
+\
+\
+N16 =\
+\
+   0.678107521248348\
+\
+\
+error =\
+\
+   0.007662055541514\
+\
+\
+N32 =\
+\
+   0.685485125018432\
+\
+\
+error =\
+\
+   0.003868104270971\
+\
+\
+N64 =\
+\
+   0.689279076288974\
+\
+\
+error =\
+\
+   0.001943520396248\
+\
+\
+N128 =\
+\
+   0.691203660163697\
+\
+\
+error =\
+\
+     9.741527425191077e-04\
+\
+\
+N256 =\
+\
+   0.692173027817426\
+\
+\
+pN =\
+\
+   0.959451159191325\
+\
+\
+error =\
+\
+   0.053761949222496\
+\
+\
+CN2 =\
+\
+   0.639385231337449\
+\
+\
+error =\
+\
+   0.028626495093426\
+\
+\
+CN4 =\
+\
+   0.664520685466520\
+\
+\
+error =\
+\
+   0.014817570221859\
+\
+\
+CN8 =\
+\
+   0.678329610338086\
+\
+\
+error =\
+\
+   0.007544940167341\
+\
+\
+CN16 =\
+\
+   0.685602240392604\
+\
+\
+error =\
+\
+   0.003807877395621\
+\
+\
+CN32 =\
+\
+   0.689339303164324\
+\
+\
+error =\
+\
+   0.001912968693061\
+\
+\
+CN64 =\
+\
+   0.691234211866884\
+\
+\
+error =\
+\
+     9.587645678467149e-04\
+\
+\
+CN128 =\
+\
+   0.692188415992099\
+\
+\
+pCN =\
+\
+   0.989758511954197}

@@ -1,0 +1,94 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf290
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 % Chris McKnight\
+% Run of sqrt(x) calculations\
+a = 0;\
+b = 1;\
+s2 =  simps2(a, b, 2)\
+s4 =  simps2(a, b, 4)\
+s8 =  simps2(a, b, 8)\
+s16 = simps2(a, b, 16)\
+s32 = simps2(a, b, 32)\
+s64 = simps2(a, b, 64)\
+\
+num = s32 - s16;\
+den = s64 - s32;\
+p = log(num / den)/log(2)\
+if (a ~= 0)\
+    corrected = intval - h^4/180*(3/8)*[b^(-5/2) - a^(-5/2)]\
+else\
+    rich = richardson(a, b, s32, s64, p)\
+end\
+\
+error =\
+\
+   0.028595479208968\
+\
+\
+s2 =\
+\
+   0.638071187457698\
+\
+\
+error =\
+\
+   0.010140401874096\
+\
+\
+s4 =\
+\
+   0.656526264792571\
+\
+\
+error =\
+\
+   0.003587386581643\
+\
+\
+s8 =\
+\
+   0.663079280085024\
+\
+\
+error =\
+\
+   0.001268478038514\
+\
+\
+s16 =\
+\
+   0.665398188628153\
+\
+\
+error =\
+\
+     4.484839204870195e-04\
+\
+\
+s32 =\
+\
+   0.666218182746180\
+\
+\
+error =\
+\
+     1.585635883046832e-04\
+\
+\
+s64 =\
+\
+   0.666508103078362\
+\
+\
+p =\
+\
+   1.499957047546908\
+\
+\
+rich =\
+\
+   0.666666673076082}
